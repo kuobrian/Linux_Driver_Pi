@@ -76,3 +76,12 @@ $ sudo chmod 666 /dev/my_pwm_driver
 $ echo a >> /dev/my_pwm_driver
 $ echo j >> /dev/my_pwm_driver
 ```
+
+# 11 gpio_irq
+Using GPIO Interrupts in a Linux Kernel Module
+```
+$ make
+$ sudo insmod gpio_irq.ko
+
+$ dmesg | tail 
+```
