@@ -64,3 +64,15 @@ $ sudo chmod 666 /dev/lcd
 $ echo "Hello " >> /dev/lcd
 $ echo "LCD Driver" >> /dev/lcd
 ```
+
+# 06 PWM Driver
+PWM Driver
+```
+$ make
+$ sudo insmod pwm_driver.ko
+
+// test
+$ sudo chmod 666 /dev/my_pwm_driver
+$ echo a >> /dev/my_pwm_driver
+$ echo j >> /dev/my_pwm_driver
+```
