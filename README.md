@@ -85,3 +85,17 @@ $ sudo insmod gpio_irq.ko
 
 $ dmesg | tail 
 ```
+
+# 12 Parameters
+Parameters for a Linux Kernel Module [ref.](http://www.makelinux.net/ldd3/chp-2-sect-8.shtml)
+
+```
+$ make
+$ sudo insmod my_params.ko
+$ dmesg | tail
+
+// list kernel info
+$ /sbin/modinfo my_params.ko
+// test
+$ sudo insmod my_params.ko device_name="dummy" gpio_nr=2
+```
