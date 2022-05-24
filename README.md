@@ -44,9 +44,6 @@ $ echo "This is a test" >> /dev/dummydriver
 # 04_GPIO_driver
 GPIO driver
 ```
-// To run this example create a device file with:
-$ sudo mknod /dev/mydevice c 64 0
-
 $ make
 $ sudo insmod gpio_driver.ko
 
@@ -54,4 +51,16 @@ $ sudo insmod gpio_driver.ko
 $ sudo chmod 666 /dev/my_gpio_driver
 $ echo 1 >> /dev/my_gpio_driver
 $ echo 0 >> /dev/my_gpio_driver
+```
+
+# 05 LCD text display driver
+LCD driver
+```
+$ make
+$ sudo insmod lcd_driver.ko
+
+// test
+$ sudo chmod 666 /dev/lcd
+$ echo "Hello " >> /dev/lcd
+$ echo "LCD Driver" >> /dev/lcd
 ```
