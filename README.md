@@ -99,3 +99,14 @@ $ /sbin/modinfo my_params.ko
 // test
 $ sudo insmod my_params.ko device_name="dummy" gpio_nr=2
 ```
+
+# 13 IOCTL
+IOCtl in a Linux Kernel Module
+```
+$ make
+$ sudo insmod ioctl_example.ko
+$ dmesg | tail
+
+// To run this example create a device file with:
+$ sudo mknod /dev/mydevice c 64 0
+```
