@@ -20,10 +20,23 @@ Connect linux kernel module or device driver with device (over a device number)
 $ make
 $ sudo insmod dev_nr.ko
 $ cat /proc/device | grep my_dev_nr
+
+// To run this example create a device file with:
+$ sudo mknod /dev/mydevice c 64 0
+
 $ dmesg | tail 
-$ sudo rmmod mymodule
+$ sudo rmmod dev_nr
 ```
-To run this example create a device file with:
+
+# 03_read_write
+Auto Device File creation & Read- Write-Callbacks
 ```
-sudo mknod /dev/mydevice c 64 0
+// To run this example create a device file with:
+$ sudo mknod /dev/mydevice c 64 0
+
+$ make
+$ sudo insmod write_read.ko
+
+// test
+$ echo "This is a test" >> /dev/dummydriver
 ```
