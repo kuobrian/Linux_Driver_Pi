@@ -120,10 +120,18 @@ $ dmesg | tail
 ```
 
 # 15 Sending Signals
+Sending a signal from Kernel to Userspace
+
+- add an ioctl command forregistering the userspace application to the kernel
+- <linux/sched/signal.h> for signal sending and signal stuff
+
 ```
 $ make
 $ sudo insmod gpio_irq_signal.ko
 $ dmesg | tail
+
+// To run this example create a device file with:
+$ sudo mknod /dev/irq_signal c 64 0
 ```
 # 16
 ```
