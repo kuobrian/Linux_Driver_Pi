@@ -38,7 +38,7 @@ $ make
 $ sudo insmod write_read.ko
 
 // test
-$ echo "This is a test" >> /dev/dummydriver
+$ echo "This is a test" > /dev/dummydriver
 ```
 
 # 04_GPIO_driver
@@ -49,8 +49,8 @@ $ sudo insmod gpio_driver.ko
 
 // test
 $ sudo chmod 666 /dev/my_gpio_driver
-$ echo 1 >> /dev/my_gpio_driver
-$ echo 0 >> /dev/my_gpio_driver
+$ echo 1 > /dev/my_gpio_driver
+$ echo 0 > /dev/my_gpio_driver
 ```
 
 # 05 LCD text display driver
@@ -61,8 +61,8 @@ $ sudo insmod lcd_driver.ko
 
 // test
 $ sudo chmod 666 /dev/lcd
-$ echo "Hello " >> /dev/lcd
-$ echo "LCD Driver" >> /dev/lcd
+$ echo "Hello " > /dev/lcd
+$ echo "LCD Driver" > /dev/lcd
 ```
 
 # 06 PWM Driver
@@ -73,8 +73,8 @@ $ sudo insmod pwm_driver.ko
 
 // test
 $ sudo chmod 666 /dev/my_pwm_driver
-$ echo a >> /dev/my_pwm_driver
-$ echo j >> /dev/my_pwm_driver
+$ echo a > /dev/my_pwm_driver
+$ echo j > /dev/my_pwm_driver
 ```
 
 # 11 gpio_irq
@@ -148,8 +148,19 @@ $ dmesg | tail
 $ sudo mknod /dev/irq_poll c 64 0
 
 ```
-# 17
+# 17 waitqueue
+Waitqueues in a Linux Kernel Module
+-  <linux/jiffies.h> using a function with a timeout
 ```
+$ make
+$ sudo insmod waitqueue.ko
+$ dmesg | tail
+
+// To run this example create a device file with:
+$ sudo mknod /dev/dummy c 64 0
+$ echo 10 > /dev/my_pwm_driver
+$ echo 11 > /dev/my_pwm_driver
+
 ```
 # 18
 ```
