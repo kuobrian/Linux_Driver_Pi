@@ -133,8 +133,20 @@ $ dmesg | tail
 // To run this example create a device file with:
 $ sudo mknod /dev/irq_signal c 64 0
 ```
-# 16
+
+# 16 Poll
+The Poll callback in a Linux Kernel Module
+- initialize gpio and interrupt
+- offer a register a device number
+- open the corresponding device file and ues the poll function to be notifiedw whenever pressing button
 ```
+$ make
+$ sudo insmod gpio_irq_poll.ko
+$ dmesg | tail
+
+// To run this example create a device file with:
+$ sudo mknod /dev/irq_poll c 64 0
+
 ```
 # 17
 ```
