@@ -177,9 +177,19 @@ $ dmesg | tail
 $ echo "Hello from userspace" > /proc/hello/dummy
 $ cat /proc/hello/dummy | head -n 3
 ```
-# 19
+# 19 sysfs
+Create sysfs entries from a Linux Kernel Module
+- sys is another virtual file system
+- access the hardware or buses
+- 
 ```
 
+$ make
+$ sudo insmod procfs_test.ko
+$ dmesg | tail
+
+$ ls /sys/kernel/hello/dummy -al
+$ echo "Hello from userspace" > /sys/kernel/hello/dummy
 ```
 # 20
 ```
