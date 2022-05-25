@@ -183,17 +183,39 @@ Create sysfs entries from a Linux Kernel Module
 - access the hardware or buses
 - 
 ```
-
 $ make
-$ sudo insmod procfs_test.ko
+$ sudo insmod sysfs_test.ko
 $ dmesg | tail
 
 $ ls /sys/kernel/hello/dummy -al
 $ echo "Hello from userspace" > /sys/kernel/hello/dummy
 ```
-# 20
+# 20 dt_probe
+Parsing from the device tree in a Linux Kernel Module
+- [Device Tree](https://events.static.linuxfound.org/sites/events/files/slides/petazzoni-device-tree-dummies.pdf)
 ```
+$ sudo dtoverlay testoverlay.dtbo
+$ sudo ls /proc/device-tree/my_device/
+$ sudo cat /proc/device-tree/my_device/label
+$ sudo cat /proc/device-tree/my_device/name
+
+$ make
+$ sudo insmod dt_probe.ko
+$ dmesg | tail
+
 ```
-# 21
+# 21 dt_gpio
+Device Tree GPIO Driver
+- connect gpio 21 to raspberry pi
 ```
+$ sudo dtoverlay testoverlay.dtbo
+$ sudo ls /proc/device-tree/my_device/
+$ sudo cat /proc/device-tree/my_device/label
+$ sudo cat /proc/device-tree/my_device/name
+
+$ make
+$ sudo insmod dt_gpio.ko
+$ dmesg | tail
+$ echo 1 > /proc/my-led
+$ echo 0 > /proc/my-led
 ```
