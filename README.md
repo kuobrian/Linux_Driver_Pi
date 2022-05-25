@@ -110,3 +110,36 @@ $ dmesg | tail
 // To run this example create a device file with:
 $ sudo mknod /dev/mydevice c 64 0
 ```
+
+# 14 kernel threads
+Threads in a Linux Kernel Module
+```
+$ make
+$ sudo insmod kthread.ko
+$ dmesg | tail
+```
+
+# 15 Sending Signals
+```
+$ make
+$ sudo insmod gpio_irq_signal.ko
+$ dmesg | tail
+```
+# 16
+```
+```
+# 17
+```
+```
+# 18
+```
+```
+# 19
+```
+```
+# 20
+```
+```
+# 21
+```
+```
