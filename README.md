@@ -162,11 +162,24 @@ $ echo 10 > /dev/my_pwm_driver
 $ echo 11 > /dev/my_pwm_driver
 
 ```
-# 18
+# 18 procfs
+Create procfs entries from a Linux Kernel Module
+- procfs stands for rpocess file system and it's a virtual file system on unix machine
+- it's mounted to /proc
 ```
+// look up cpu info
+$ cat /proc/cpuinfo
+
+$ make
+$ sudo insmod procfs_test.ko
+$ dmesg | tail
+
+$ echo "Hello from userspace" > /proc/hello/dummy
+$ cat /proc/hello/dummy | head -n 3
 ```
 # 19
 ```
+
 ```
 # 20
 ```
